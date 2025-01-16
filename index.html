@@ -19,7 +19,7 @@
                     <li><a href="#products">Products</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#contact" id="contact-btn">Contact Us</a></li>
-                    <li><a href="#cart" id="cart-link">Cart (<span id="cart-count">0</span>)</a></li>
+                    <li><a href="javascript:void(0);" id="cart-toggle">Cart (<span id="cart-count">0</span>)</a></li>
                 </ul>
             </nav>
         </div>
@@ -60,6 +60,7 @@
                 <!-- Cart items will appear here -->
             </div>
             <button onclick="checkout()">Proceed to Checkout</button>
+            <button onclick="closeCart()">Close Cart</button>
         </div>
     </section>
 
@@ -82,6 +83,9 @@
                 </p>
                 <p>
                     <label>Email <input type="email" name="email" required /></label>
+                </p>
+                <p>
+                    <label>Message <textarea name="message" required></textarea></label>
                 </p>
                 <p>
                     <button type="submit">Send</button>
