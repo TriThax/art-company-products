@@ -3,82 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art Store</title>
+    <title>DesignObjet - Custom Designed Art</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Main Heading -->
-<h1>Welcome to the Art Store!</h1>
+    <!-- Header Section -->
+    <header>
+        <h1>DesignObjet - Custom Designed Lights</h1>
+        <nav>
+            <ul>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<!-- About Us Section -->
-<section id="about-us">
-    <h2>About Us</h2>
-    <p>Welcome to <strong>Shenzhen Lumière Designs</strong>, a leading Chinese company that specializes in creating exquisite lighting designs enhanced with precious stones (pierres précieuses). Our artisans combine cutting-edge technology with traditional craftsmanship to deliver unique, high-quality lighting fixtures.</p>
-    <p>Each of our products is a masterpiece, with carefully selected precious stones embedded into every design to bring an element of elegance and sophistication. Whether it's a chandelier, table lamp, or pendant light, every piece tells a story of luxury, creativity, and craftsmanship.</p>
-    <p>Founded in 2010 in Shenzhen, our team of designers and artisans work tirelessly to blend the beauty of light with the splendor of precious stones, creating pieces that shine with grace and brilliance.</p>
-</section>
+    <!-- Products Section -->
+    <section id="products">
+        <h2>Our Products</h2>
+        <div class="product-list">
+            <div class="product">
+                <h3>Design Light 1</h3>
+                <img src="DesignObjet/product1.jpg" alt="Design Light 1">
+                <p>Price: $200</p>
+                <button onclick="openOrderForm('Design Light 1', 200)">Order Now</button>
+            </div>
+            <div class="product">
+                <h3>Design Light 2</h3>
+                <img src="DesignObjet/product2.jpg" alt="Design Light 2">
+                <p>Price: $250</p>
+                <button onclick="openOrderForm('Design Light 2', 250)">Order Now</button>
+            </div>
+            <div class="product">
+                <h3>Design Light 3</h3>
+                <img src="DesignObjet/product3.jpg" alt="Design Light 3">
+                <p>Price: $300</p>
+                <button onclick="openOrderForm('Design Light 3', 300)">Order Now</button>
+            </div>
+        </div>
+    </section>
 
-<!-- Product Section -->
-<div id="productList">
-    <!-- Product list will be dynamically generated here -->
-</div>
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a Chinese company that specializes in creating custom-designed lights using a variety of precious stones, including jade, amethyst, and diamonds. Our artisans handcraft each piece to bring elegance and beauty into your home or office.</p>
+    </section>
 
-<h2>Your Cart</h2>
-<ul id="cartItems">
-    <!-- Cart items will appear here -->
-</ul>
+    <!-- Contact Form (Order Form) -->
+    <section id="contact" style="display:none;" id="orderFormSection">
+        <h2>Place Your Order</h2>
+        <!-- Form with Netlify Form Attributes -->
+        <form name="orderForm" method="POST" data-netlify="true">
+            <!-- Hidden input to tell Netlify which form this is -->
+            <input type="hidden" name="form-name" value="orderForm">
+            
+            <label for="product">Product Name:</label>
+            <input type="text" name="product" id="product" readonly required>
 
-<p>Total: $<span id="totalPrice">0</span></p>
+            <label for="quantity">Quantity:</label>
+            <input type="number" name="quantity" id="quantity" min="1" required>
 
-<button onclick="sendOrder()">Request a Quote</button>
+            <label for="name">Your Name:</label>
+            <input type="text" name="name" id="name" required>
 
-<!-- Contact Section -->
-<section id="contact-us">
-    <h2>Contact Us</h2>
-    <p>If you have any inquiries or would like to place an order, feel free to reach out to us using the contact details below:</p>
-    <ul>
-        <li><strong>Email:</strong> info@lumiere-designs.com</li>
-        <li><strong>Phone:</strong> +86 123 456 7890</li>
-        <li><strong>Address:</strong> 123 Light St, Shenzhen, Guangdong, China</li>
-    </ul>
-    <h3>Or fill out the form below:</h3>
-    <form action="https://formsubmit.co/info@lumiere-designs.com" method="POST">
-        <input type="hidden" name="_subject" value="New Inquiry from Contact Form">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-</section>
+            <label for="email">Your Email:</label>
+            <input type="email" name="email" id="email" required>
 
-<script src="cart.js"></script>
-<script>
-// List of products with their names, prices, and image paths
-const products = [
-    { name: "Art Piece 1", price: 100, image: "DesignObjet/product1.jpg" },
-    { name: "Art Piece 2", price: 200, image: "DesignObjet/product2.jpg" },
-    { name: "Art Piece 3", price: 300, image: "DesignObjet/product3.jpg" }
-];
+            <label for="message">Additional Information (Optional):</label>
+            <textarea name="message" id="message"></textarea>
 
-// Dynamically generate the product list
-const productListElement = document.getElementById('productList');
-products.forEach(product => {
-    const productDiv = document.createElement('div');
-    productDiv.classList.add('product');
-    
-    const productHTML = `
-        <h3>${product.name}</h3>
-        <img src="${product.image}" alt="${product.name}" style="width: 200px; height: 200px; object-fit: cover;">
-        <p>Price: $${product.price}</p>
-        <button onclick="addToCart('${product.name}', ${product.price})">Add to Cart</button>
-    `;
-    productDiv.innerHTML = productHTML;
-    productListElement.appendChild(productDiv);
-});
-</script>
+            <button type="submit">Submit Order</button>
+        </form>
+    </section>
+
+    <script src="app.js"></script>
+
 </body>
 </html>
