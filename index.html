@@ -59,8 +59,36 @@
             <div id="cart-items">
                 <!-- Cart items will appear here -->
             </div>
-            <button onclick="checkout()">Proceed to Checkout</button>
+            <button onclick="showOrderForm()">Place an Order</button>
             <button onclick="closeCart()">Close Cart</button>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section id="order-form-section" style="display:none;">
+        <div class="container">
+            <h2>Order Form</h2>
+            <form name="order" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="order">
+                
+                <p>
+                    <label>Name <input type="text" name="name" required /></label>
+                </p>
+                <p>
+                    <label>Email <input type="email" name="email" required /></label>
+                </p>
+                <p>
+                    <label>Address <textarea name="address" required></textarea></label>
+                </p>
+                <p>
+                    <label>Phone (Optional) <input type="text" name="phone" /></label>
+                </p>
+                <p>
+                    <label>Order Details:</label>
+                    <textarea name="order-details" readonly></textarea>
+                </p>
+                <button type="submit">Submit Order</button>
+            </form>
         </div>
     </section>
 
