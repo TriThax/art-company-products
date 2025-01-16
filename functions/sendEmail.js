@@ -4,26 +4,26 @@ exports.handler = async (event, context) => {
     // Parse the cart details from the request body
     const { cart, total } = JSON.parse(event.body);
 
-    // Create a transport for sending emails (use your email provider settings)
+    // Create a transporter to send email (use Gmail or any other service)
     const transporter = nodemailer.createTransport({
-        service: 'gmail', // Change to your email provider (e.g., SendGrid, etc.)
+        service: 'gmail', // You can use Gmail or any email provider
         auth: {
-            user: 'youremail@example.com', // Your email
-            pass: 'yourpassword' // Your email password or app-specific password
+            user: process.env.EMAIL_USER, // Your email address, stored as an environment variable
+            pass: process.env.EMAIL_PASSWORD // Your email password or an App-Specific Password
         }
     });
 
     const mailOptions = {
-        from: 'youremail@example.com',
-        to: 'youremail@example.com', // Where the order should be sent
+        from: process.env.EMAIL_USER, // Your email address
+        to: 'nguyentrithoyves88@gmail.com', // Replace with your email
         subject: 'New Quote Request from Art Store',
-        text: `You have a new quote request:\n\nCart Details:\n${cart}\n\nTotal: $${total}`
+        text: `You have a new quote request from the Art Store!\n\nCart Details:\n${cart}\n\nTotal: $${total}`
     };
 
     try {
         // Send email
         await transporter.sendMail(mailOptions);
-
+        
         return {
             statusCode: 200,
             body: JSON.stringify({ message: 'Email sent successfully!' })
@@ -36,4 +36,3 @@ exports.handler = async (event, context) => {
         };
     }
 };
-
