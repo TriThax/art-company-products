@@ -95,6 +95,22 @@
 
                 <button type="submit">Submit Order</button>
             </form>
+
+            <!-- Contact Form (Simple Contact Us form) -->
+            <h2>Contact Us</h2>
+            <form name="contact" method="POST" data-netlify="true">
+                <!-- Hidden input to tell Netlify which form this is -->
+                <input type="hidden" name="form-name" value="contact">
+                <p>
+                    <label>Name <input type="text" name="name" required /></label>
+                </p>
+                <p>
+                    <label>Email <input type="email" name="email" required /></label>
+                </p>
+                <p>
+                    <button type="submit">Send</button>
+                </p>
+            </form>
         </div>
     </section>
 
