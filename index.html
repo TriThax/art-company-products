@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DesignObjet - Custom Designed Art</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- Header Section -->
@@ -71,9 +73,11 @@
     <section id="contact" class="contact-section" style="display:none;">
         <div class="container">
             <h2>Place Your Order</h2>
+            <!-- Form with Netlify Form Attributes -->
             <form name="orderForm" method="POST" data-netlify="true">
+                <!-- Hidden input to tell Netlify which form this is -->
                 <input type="hidden" name="form-name" value="orderForm">
-                
+
                 <label for="product">Product Names:</label>
                 <input type="text" name="product" id="product" readonly required>
 
@@ -104,4 +108,5 @@
     <script src="app.js"></script>
 
 </body>
+
 </html>
