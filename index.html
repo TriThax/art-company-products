@@ -18,7 +18,7 @@
                 <ul>
                     <li><a href="#products">Products</a></li>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact" id="contact-btn">Contact Us</a></li>
                     <li><a href="#cart" id="cart-link">Cart (<span id="cart-count">0</span>)</a></li>
                 </ul>
             </nav>
@@ -56,7 +56,9 @@
     <section id="cart" style="display:none;">
         <div class="container">
             <h2>Your Cart</h2>
-            <div id="cart-items"></div>
+            <div id="cart-items">
+                <!-- Cart items will appear here -->
+            </div>
             <button onclick="checkout()">Proceed to Checkout</button>
         </div>
     </section>
@@ -69,37 +71,11 @@
         </div>
     </section>
 
-    <!-- Contact Form Section (Order Form) -->
+    <!-- Contact Form Section (Initially Hidden) -->
     <section id="contact" class="contact-section" style="display:none;">
         <div class="container">
-            <h2>Place Your Order</h2>
-            <!-- Form with Netlify Form Attributes -->
-            <form name="orderForm" method="POST" data-netlify="true">
-                <!-- Hidden input to tell Netlify which form this is -->
-                <input type="hidden" name="form-name" value="orderForm">
-
-                <label for="product">Product Names:</label>
-                <input type="text" name="product" id="product" readonly required>
-
-                <label for="quantity">Quantities:</label>
-                <input type="number" name="quantity" id="quantity" min="1" required>
-
-                <label for="name">Your Name:</label>
-                <input type="text" name="name" id="name" required>
-
-                <label for="email">Your Email:</label>
-                <input type="email" name="email" id="email" required>
-
-                <label for="message">Additional Information (Optional):</label>
-                <textarea name="message" id="message"></textarea>
-
-                <button type="submit">Submit Order</button>
-            </form>
-
-            <!-- Contact Form (Simple Contact Us form) -->
             <h2>Contact Us</h2>
             <form name="contact" method="POST" data-netlify="true">
-                <!-- Hidden input to tell Netlify which form this is -->
                 <input type="hidden" name="form-name" value="contact">
                 <p>
                     <label>Name <input type="text" name="name" required /></label>
@@ -114,7 +90,6 @@
         </div>
     </section>
 
-    <!-- Footer Section with Contact Us Message -->
     <footer>
         <div class="container">
             <p>For inquiries, please email us at <a href="mailto:info@designobjet.com">info@designobjet.com</a></p>
@@ -122,7 +97,6 @@
     </footer>
 
     <script src="app.js"></script>
-
 </body>
 
 </html>
