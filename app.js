@@ -5,6 +5,12 @@ document.getElementById('contact-btn').addEventListener('click', function() {
     contactForm.style.display = (contactForm.style.display === 'none') ? 'block' : 'none';
 });
 
+document.getElementById('cart-toggle').addEventListener('click', function() {
+    const cartSection = document.getElementById('cart');
+    cartSection.style.display = (cartSection.style.display === 'none') ? 'block' : 'none';
+    updateCart();
+});
+
 function addToCart(productName, price) {
     cart.push({ productName, price });
     updateCart();
@@ -39,5 +45,10 @@ function removeFromCart(index) {
 
 function checkout() {
     alert('Proceeding to checkout...');
-    // Implement checkout logic here
+    // Implement your checkout logic here
+}
+
+function closeCart() {
+    const cartSection = document.getElementById('cart');
+    cartSection.style.display = 'none';
 }
