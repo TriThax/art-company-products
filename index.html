@@ -17,6 +17,7 @@
                     <li><a href="#products">Products</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="#cart" id="cart-link">Cart (<span id="cart-count">0</span>)</a></li>
                 </ul>
             </nav>
         </div>
@@ -31,21 +32,30 @@
                     <h3>Design Light 1</h3>
                     <img src="DesignObjet/product1.jpg" alt="Design Light 1">
                     <p>Price: $200</p>
-                    <button onclick="openOrderForm('Design Light 1', 200)">Order Now</button>
+                    <button onclick="addToCart('Design Light 1', 200)">Add to Cart</button>
                 </div>
                 <div class="product">
                     <h3>Design Light 2</h3>
                     <img src="DesignObjet/product2.jpg" alt="Design Light 2">
                     <p>Price: $250</p>
-                    <button onclick="openOrderForm('Design Light 2', 250)">Order Now</button>
+                    <button onclick="addToCart('Design Light 2', 250)">Add to Cart</button>
                 </div>
                 <div class="product">
                     <h3>Design Light 3</h3>
                     <img src="DesignObjet/product3.jpg" alt="Design Light 3">
                     <p>Price: $300</p>
-                    <button onclick="openOrderForm('Design Light 3', 300)">Order Now</button>
+                    <button onclick="addToCart('Design Light 3', 300)">Add to Cart</button>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section id="cart" style="display:none;">
+        <div class="container">
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <button onclick="checkout()">Proceed to Checkout</button>
         </div>
     </section>
 
@@ -58,18 +68,16 @@
     </section>
 
     <!-- Contact Form Section (Order Form) -->
-    <section id="contact" class="contact-section" style="display:none;" id="orderFormSection">
+    <section id="contact" class="contact-section" style="display:none;">
         <div class="container">
             <h2>Place Your Order</h2>
-            <!-- Form with Netlify Form Attributes -->
             <form name="orderForm" method="POST" data-netlify="true">
-                <!-- Hidden input to tell Netlify which form this is -->
                 <input type="hidden" name="form-name" value="orderForm">
                 
-                <label for="product">Product Name:</label>
+                <label for="product">Product Names:</label>
                 <input type="text" name="product" id="product" readonly required>
 
-                <label for="quantity">Quantity:</label>
+                <label for="quantity">Quantities:</label>
                 <input type="number" name="quantity" id="quantity" min="1" required>
 
                 <label for="name">Your Name:</label>
