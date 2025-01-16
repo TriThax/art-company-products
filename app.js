@@ -43,9 +43,16 @@ function removeFromCart(index) {
     updateCart();
 }
 
-function checkout() {
-    alert('Proceeding to checkout...');
-    // Implement your checkout logic here
+function showOrderForm() {
+    const orderFormSection = document.getElementById('order-form-section');
+    orderFormSection.style.display = 'block';
+
+    // Populate the order details in the order form
+    const orderDetails = cart.map(item => `${item.productName} - $${item.price}`).join("\n");
+    document.querySelector('[name="order-details"]').value = orderDetails;
+
+    // Hide the cart section
+    document.getElementById('cart').style.display = 'none';
 }
 
 function closeCart() {
