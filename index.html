@@ -10,73 +10,88 @@
 
     <!-- Header Section -->
     <header>
-        <h1>DesignObjet - Custom Designed Lights</h1>
-        <nav>
-            <ul>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>DesignObjet - Custom Designed Lights</h1>
+            <nav>
+                <ul>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Products Section -->
     <section id="products">
-        <h2>Our Products</h2>
-        <div class="product-list">
-            <div class="product">
-                <h3>Design Light 1</h3>
-                <img src="DesignObjet/product1.jpg" alt="Design Light 1">
-                <p>Price: $200</p>
-                <button onclick="openOrderForm('Design Light 1', 200)">Order Now</button>
-            </div>
-            <div class="product">
-                <h3>Design Light 2</h3>
-                <img src="DesignObjet/product2.jpg" alt="Design Light 2">
-                <p>Price: $250</p>
-                <button onclick="openOrderForm('Design Light 2', 250)">Order Now</button>
-            </div>
-            <div class="product">
-                <h3>Design Light 3</h3>
-                <img src="DesignObjet/product3.jpg" alt="Design Light 3">
-                <p>Price: $300</p>
-                <button onclick="openOrderForm('Design Light 3', 300)">Order Now</button>
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="product-list">
+                <div class="product">
+                    <h3>Design Light 1</h3>
+                    <img src="DesignObjet/product1.jpg" alt="Design Light 1">
+                    <p>Price: $200</p>
+                    <button onclick="openOrderForm('Design Light 1', 200)">Order Now</button>
+                </div>
+                <div class="product">
+                    <h3>Design Light 2</h3>
+                    <img src="DesignObjet/product2.jpg" alt="Design Light 2">
+                    <p>Price: $250</p>
+                    <button onclick="openOrderForm('Design Light 2', 250)">Order Now</button>
+                </div>
+                <div class="product">
+                    <h3>Design Light 3</h3>
+                    <img src="DesignObjet/product3.jpg" alt="Design Light 3">
+                    <p>Price: $300</p>
+                    <button onclick="openOrderForm('Design Light 3', 300)">Order Now</button>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Us Section -->
     <section id="about">
-        <h2>About Us</h2>
-        <p>We are a Chinese company that specializes in creating custom-designed lights using a variety of precious stones, including jade, amethyst, and diamonds. Our artisans handcraft each piece to bring elegance and beauty into your home or office.</p>
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We are a Chinese company that specializes in creating custom-designed lights using a variety of precious stones, including jade, amethyst, and diamonds. Our artisans handcraft each piece to bring elegance and beauty into your home or office.</p>
+        </div>
     </section>
 
-    <!-- Contact Form (Order Form) -->
-    <section id="contact" style="display:none;" id="orderFormSection">
-        <h2>Place Your Order</h2>
-        <!-- Form with Netlify Form Attributes -->
-        <form name="orderForm" method="POST" data-netlify="true">
-            <!-- Hidden input to tell Netlify which form this is -->
-            <input type="hidden" name="form-name" value="orderForm">
-            
-            <label for="product">Product Name:</label>
-            <input type="text" name="product" id="product" readonly required>
+    <!-- Contact Form Section (Order Form) -->
+    <section id="contact" class="contact-section" style="display:none;" id="orderFormSection">
+        <div class="container">
+            <h2>Place Your Order</h2>
+            <!-- Form with Netlify Form Attributes -->
+            <form name="orderForm" method="POST" data-netlify="true">
+                <!-- Hidden input to tell Netlify which form this is -->
+                <input type="hidden" name="form-name" value="orderForm">
+                
+                <label for="product">Product Name:</label>
+                <input type="text" name="product" id="product" readonly required>
 
-            <label for="quantity">Quantity:</label>
-            <input type="number" name="quantity" id="quantity" min="1" required>
+                <label for="quantity">Quantity:</label>
+                <input type="number" name="quantity" id="quantity" min="1" required>
 
-            <label for="name">Your Name:</label>
-            <input type="text" name="name" id="name" required>
+                <label for="name">Your Name:</label>
+                <input type="text" name="name" id="name" required>
 
-            <label for="email">Your Email:</label>
-            <input type="email" name="email" id="email" required>
+                <label for="email">Your Email:</label>
+                <input type="email" name="email" id="email" required>
 
-            <label for="message">Additional Information (Optional):</label>
-            <textarea name="message" id="message"></textarea>
+                <label for="message">Additional Information (Optional):</label>
+                <textarea name="message" id="message"></textarea>
 
-            <button type="submit">Submit Order</button>
-        </form>
+                <button type="submit">Submit Order</button>
+            </form>
+        </div>
     </section>
+
+    <!-- Footer Section with Contact Us Message -->
+    <footer>
+        <div class="container">
+            <p>For inquiries, please email us at <a href="mailto:info@designobjet.com">info@designobjet.com</a></p>
+        </div>
+    </footer>
 
     <script src="app.js"></script>
 
