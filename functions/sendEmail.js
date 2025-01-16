@@ -15,7 +15,7 @@ exports.handler = async (event, context) => {
 
     const mailOptions = {
         from: process.env.EMAIL_USER, // Your email address
-        to: 'nguyentrithoyves88@gmail.com', // Replace with your email
+        to: 'youremail@example.com', // Replace with your email
         subject: 'New Quote Request from Art Store',
         text: `You have a new quote request from the Art Store!\n\nCart Details:\n${cart}\n\nTotal: $${total}`
     };
